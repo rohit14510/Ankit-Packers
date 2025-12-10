@@ -13,8 +13,6 @@ if(isset($_POST['submit'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-         $movefrom = $_POST['movefrom'];
-          $moveto = $_POST['moveto'];
         $req = $_POST['req'];
 $mail = new PHPMailer;
 // SMTP configuration
@@ -26,11 +24,11 @@ $mail->Password = 'Standup@123';
 $mail->SMTPSecure = 'tls';
 $mail->Port     = 587;
 // Sender info 
-$mail->setFrom('info@drspackersmovers.com', 'DRS Packers and Movers'); 
-$mail->addReplyTo('info@drspackersmovers.com', 'Test Email'); 
+$mail->setFrom('info@movers.ankitpackers.com', 'Ankit Packers and Movers'); 
+$mail->addReplyTo('info@movers.ankitpackers.com', 'Test Email'); 
  
 // Add a recipient 
-$mail->addAddress('drspackersm@gmail.com'); 
+$mail->addAddress('ankitmoverspackers@gmail.com'); 
  
 // Add cc or bcc  
 // $mail->addCC('cc@example.com'); 
@@ -45,14 +43,12 @@ $mail->isHTML(true);
 // Email body content 
 $mailContent = ' 
     <h2>New Enquiry Received</h2> 
-    <p>Name :'.$name.'</p> > 
+    <p>Name :'.$name.'</p> 
     <p>Phone :'.$phone.'</p> 
     <p>Email :'.$email.'</p> 
-    <p>Move From :'.$movefrom.'</p> 
-     <p>Move To :'.$moveto.'</p> 
     <p>Requirement :'.$req.'</p> 
     <p>Thanks and Regards</p>  
-    <p>DRS Packers and Movers</p>';  
+    <p>Ankit Packers and Movers</p>';  
 // $mailContent = "Name : ".$name."\n"."Subject : ".$subject."\n"."Email : ".$email."\n"."Mbile : ".$mobile."\n"."Message :".$message; 
 $mail->Body = $mailContent; 
 $mail->headers  = "From: Sender Name <standupstartups1@gmail.com>" . "\r\n";
@@ -63,7 +59,7 @@ $mail->headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 if(!$mail->send()){ ?>
     <script>
     alert("Message could not be sent");
-    window.location.href="https://drspackersmovers.com/thanks.html";
+    window.location.href="https://movers.ankitpackers.com/thanks.html";
     </script>
     // 
     <?php
@@ -75,7 +71,7 @@ if(!$mail->send()){ ?>
              
             //   if( $_GET['status'] == 'success') {
                  alert("Mail Send Successfully");
-                 window.location.href="https://drspackersmovers.com/thanks.html";
+                 window.location.href="https://movers.ankitpackers.com/thanks.html";
             //   }
             //   else{
             //       echo 'alert("no good");';
